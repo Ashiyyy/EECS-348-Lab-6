@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<h1>Here you can check if 2 passwords (of length > 8) are the same!</h1><br>
+</head>
+
+<body style = "background-color: d0fdf6;">
+<body>
+	Please enter your first password!: 
+	<input id = "pass1" type="text">
+	<br>
+	Please enter your second password!:
+	<input id = "pass2" type="text">
+	<br>
+	<button id = "button1">Press here to verify passwords</button>	
+	<br>
+	<p id = "message">Do your passwords match?</p>
+
+	<script>		
+		const pass1 = document.getElementById("pass1");
+		const pass2 = document.getElementById("pass2");
+		button1.addEventListener("click", () => {
+		if ((pass1.value).length < 8){
+			document.getElementById("message").innerHTML = "Password 1 too small!";
+		} else {
+			if ((pass2.value).length < 8){
+				document.getElementById("message").innerHTML = "Password 2 too small!";
+			} else {
+				if (pass1.value == pass2.value){
+					document.getElementById("message").innerHTML = "Passwords match!";
+				} else {
+					document.getElementById("message").innerHTML = "Passwords don't match!";
+				}
+			}
+		}
+  		});
+</script>
+</body>
+</html>
